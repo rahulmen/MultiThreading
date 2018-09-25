@@ -1,0 +1,28 @@
+LIFE CYCLE OF THREAD
+
+MyThread t = new MyThread()---thread start/born------t.start------thread is Runnable-----this thread pick by Thread Scheduler----t.run() executed thread Running---------t.run() complete----thread dead
+
+=====================================
+
+There are basically two ways to define thread.
+
+1. By extending Thread Class
+2. By Implementing Runnable Interface
+
+NOTE:--
+The second approach is more good because if our MyThread class already extend Thread class than it can not extend any other class so we will miss inheritance property.
+But in second approach we cant loose Inheritance Benefit.
+
+DIFFERENCE B/W START() METHOD AND RUN() METHOD
+===============================================
+
+Thread t = new Thread();
+t.start();
+
+This method is used to start the thread and once thread scheduler will be pick this thread automatically overrided run() method will be executed.
+
+Thread t = new Thread();
+t.run();
+
+In this case new Thread is created but not yet started so run() method will be executed like a normal method by main thread.
+
