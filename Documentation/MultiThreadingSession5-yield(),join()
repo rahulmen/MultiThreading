@@ -1,0 +1,25 @@
+yield() method
+
+public static void yield()
+====================
+
+We can use yield() method on any thread to hault execution of that thread so that Thread executer will assign processor to waiting thread of Same Priority.
+
+Note :- Once we have applied yield() method on any thread object that thread will be move to waiting list where many other thread of same priority is waiting and its Thread executor responsibility
+to pick ant Thread from waiting list and assigned processor to it for execution.
+
+Practically we use yield method on threads which might take many hours to complete its run() method. Benefit is other waiting thread which can take only nanoseconds to complete should complete its execution.
+
+Once any Thread will call the yield method we cannot determine when again this thread will get Processor to execute.
+
+join() method
+================
+
+If any thread has dependency on any other thread then that thread should use join() method to wait until dependent thread should complete and its result output waiting thread should use and 
+continue its execution.
+
+Thread1(t1)         Thread2(t2)
+				     t2.join();
+				     
+If thread2 is waiting for thread1 then we should call join() method on thread2 object.
+

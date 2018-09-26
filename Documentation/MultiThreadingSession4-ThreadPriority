@@ -1,0 +1,18 @@
+THREAD PRIORITY:-
+==================
+
+Valid range of thread priority is from 1 to 10.
+
+10 - Max Priority
+0 - Min Priority
+5 - Norm Priority
+
+Method used to set and get Thread Priority
+
+Thread.currentThread().setPriority(int value);
+public final void setPriority(int newPriority)
+
+Thread.currentThread().getPriority();
+public final int getPriority()
+
+Note :- Always thread with Max Priority will executed first and then Thread with Min Priority
