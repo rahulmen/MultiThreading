@@ -23,3 +23,29 @@ Thread1(t1)         Thread2(t2)
 				     
 If thread2 is waiting for thread1 then we should call join() method on thread2 object.
 
+THREAD LIFE CYCLE IN CASE OF JOIN().
+
+
+MyThreat t = new MyThread();	t.start()					is thread scheduler assigned processor							if t.run() completed
+							================				============================================				========================
+Thread State --- New/Born					Runnable() state											Running() state							DEAD STATE
+																											|	
+																											|
+																											|
+																											|
+																											|
+																								If in Running state thread call .join() method
+																								then it will moved into waiting state until that thread on which .join()
+																								method is called got complete.
+																								And Again Thread have to wait for thread scheduler to assign processer to it.
+																								SO Once .join() methos is called thread will move to step 2
+																								
+There are 3 .join() method :-
+
+1. public final void join();
+2. public final void join(long time);
+3. public final void join(long ms,int ns)	
+																								
+Method is final so that CHild class can not override this method.
+																								
+																							
