@@ -1,0 +1,27 @@
+SYNCHRONIZATION :-
+===================
+
+Synchronized modifier is eligible only against methods and blocks.
+
+If we define any method as synchronized then only one thread can access that method and block in single time so we can avoid DataInconsitency problem.
+
+Drawback :- Thread waiting time will be increased so performance will decrease.
+
+Example :- 
+
+class Test{
+
+synchronized m1();
+synchronized m2();
+m3();
+
+}
+
+If Thread1 approaches JVM to execute synchronized method m1() then JVM will assign a unique lock of Object of that class to that Thread.So now this thread is eligible to execute any
+Synchronized method present in that class.
+If Second Thread come and ask JVM to execute synchronized method m1() JVM will put that thread into waiting state until Thread will be completed and then assign Object lock to Thread 2 
+to execute.
+
+NOTE :- This Object lock concept is only applicable to Synchronized method so m3() method can be executed by any Thread.That Thread dont need to approach JVM in this case.
+
+NOTE :- Assigning and releasing Object Lock isnot Programmer Responsibility this will be taken care by JVM only.
