@@ -52,7 +52,11 @@ enum and constructor :
 2. We can’t create enum objects explicitly and hence we can’t invoke enum constructor directly.
 3. enum can only contains complete method so that means no concreate method.
 
+=======================================================
 
+By default enums have their own string values, we can also assign some custom values to enums
+We have to create parameterized constructor for this enum class. Why? Because as we know that enum class’s object can’t be create explicitly so for initializing we use parameterized constructor. And the constructor cannot be the public or protected it must have private or default modifiers. Why? if we create public or protected, it will allow initializing more than one objects. This is totally against enum concept.
+We have to create one getter method to get the value of enums.
 
 
 
