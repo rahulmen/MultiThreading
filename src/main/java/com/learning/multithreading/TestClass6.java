@@ -57,6 +57,7 @@ public class TestClass6 {
 		System.out.println("Main Thread");
 		Thread.yield(); //Here we have applied yield method on main thread
 	}
+	//Thread.sle
 
 }
 

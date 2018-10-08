@@ -1,0 +1,58 @@
+Enumeration provide the purpose to declare group of named constraints in Programming Language.
+For example the 4 suits in a deck of playing cards may be 4 enumerators named Club, Diamond, 
+Heart, and Spade, belonging to an enumerated type named Suit. 
+
+enum Suit{
+
+Club,Diamond,Heart,Spade;
+
+}
+========================================
+
+enum Color 
+    { 
+        RED, GREEN, BLUE; 
+    }
+
+Internally above enum will be converted into 
+
+class Color{
+
+public static final Color RED = new Color();
+public static final Color GREEN = new Color();
+public static final Color BLUE = new Color();
+
+}
+
+=============================================
+
+Importamt Point :-
+
+1. enum in java implicitly extends java.lang.Enum so it can not extend any other class in java but can implement many interface.
+2. toString() method is overridden in java.lang.Enum class to return enum constraint name. 
+
+=========================================
+
+Methods avalaible in java.lang.Enum
+
+values();
+This method is used to return all element present inside enum.
+
+ordinal();
+Using this method each enum constrant index can be found,Just like array Index.
+
+valueOf(String str);
+This method can be used to get particular enum constraints.
+
+=====================================
+
+enum and constructor :
+
+1.enum can contain constructor and it is executed separately for each enum constant at the time of enum class loading.
+2. We can’t create enum objects explicitly and hence we can’t invoke enum constructor directly.
+3. enum can only contains complete method so that means no concreate method.
+
+
+
+
+
