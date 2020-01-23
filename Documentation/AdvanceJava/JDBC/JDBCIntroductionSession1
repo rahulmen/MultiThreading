@@ -1,0 +1,57 @@
+JDBC(Java DataBase Connectivity) Introduction:-
+=======================
+
+
+ Statement(Vehicle to take our sql query from JavaApplication<2----------------------------------------------------------------------------------1>ResultSet(Box/Result given 
+  Object			to DataBase)																															by dataBAse back to JavaApplication)							
+	|																																			       	               |					
+	|																																				                   |				
+	|																																				                   |	
+JavaApplication<2------1>Driver(translator Used to convert Java Application calls<2------------1>Connection Object(Road/Network Socket need <2-------------------------1>DataBase
+						to DatBAse Application call and vice versa)                                   to reach Database)
+						
+						
+						
+Hence, Java Application will get result from ResultSet.
+
+BASIC COMPONENT OF JDBC APPLICATION:-
+============================================
+
+1. Driver :- To Convert JavaApplicationCall into DataBase Call and DataBase Call into JavaApplication Call some translator is required which is called Driver.
+
+2. Connection :- To reach DataBase from Java Application some Network Socket is required which we called as Connection.
+
+3. Statement :- To send our SQL Queries to database and to bring Result from DataBAse some statement Object is required.
+
+4. ResultSet :- Something like Box which holds result of SQL Queries.
+
+Steps to Develop JDBC Application
+==================================
+
+1. Load and Register Driver.
+2. Establish Connection b/w Java Application and DataBase.
+3. Creation of Statement Object.
+4. Send And Execute SQL Queries.
+5. Process Result from ResultSet.
+6. Close Connection.
+
+Basic Program
+=================
+
+import java.sql.*;
+
+class JDBCDemo{
+public static void main(String[] args){
+
+Class.forName("oracle.jdbc.OracleDriver");
+Connection connection = DriverManager.getConnection("URL","Username","password");
+Statement s = connection.createStatement();
+ResultSet rs = s.executeQuery("select * from employee");
+		while(rs.next()){
+		System.out.println(rs.getInt(1)+".."+rs.getString(1)+".."+rs.getInt(3)+".."+rs.getString(4)+"..");
+		}
+		connection.close();
+		}
+}
+
+=====================

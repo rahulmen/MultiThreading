@@ -1,0 +1,206 @@
+Standard Steps to develop JDBC Application :-
+============================================
+
+1. Load and Register Driver class.
+2. Establish Connection between Java Application and DataBase.
+3. Create Statement Object.
+4. Send and Execute SQL Query.
+5. Process Result from result Set.
+6. Close connection.
+
+
+Step 1 : Load and Register Driver class.
+=======================================
+Explanation :-
+
+1. From Java Application if we want to communicate with DataBase we need a special Software called Driver Software that need to be present in our Class Path so that it will be available to our program.
+2. Type 1 Driver Software is in build present in JDK1.7 so we don't need to set any Class Path which is JDBC-ODBC Bridge Driver.
+3. Every Driver Software is identified by a special class that is Driver Class.Type1 Driver class name is sun.jdbc.odbc.JdbcOdbcDriver .
+4. We have to load this driver class any driver class in java we can load using Class.forName(); method.
+
+	Class.forName(sun.jdbc.odbc.JdbcOdbcDriver); //Loading Type 1 Driver Class. 
+	
+Note :- WhenEver we load any class internally static block for that class is executed.
+
+Being a programmer we don't need to register Driver class as it is internally handle in static block.
+
+	static{
+		JdbcOdbcDriver driver = new JdbcOdbcDriver();
+		DriverManager.registerDriver(driver);
+	}
+	
+	
+Step 2 : Establish Connection between Java Application and DataBase.
+=======================================
+	
+Connection con = DriverManager.getConnection("JdbcURL","username","password");
+
+For Type 1 Driver :-
+
+Connection con = DriverManager.getConnection("jdbc:odbc:demodsn","scott","tiger")
+
+Important :- con is not a Connection Object as Connection is an Interface. It is a Object of its Internal Implemented Class which is sub.jdbc.odbc.JdbcOdbcConnection
+
+Note :-
+JdbcURL contains three part :-
+
+mainprotocol:subprotocol:subname
+
+Main protocol is always JDBC and sub protocol and sub name changes accordingly as per Driver.
+
+Point :- ODBC needs DSN(Data Source Network) to get DataBase information from DataBase. So if we are using Type 1 Driver it is mandatory to set DSN.
+
+Step 3 : Creation of Statement Object
+=======================================
+
+Statement st = con.createStatement();
+
+Step 4 : Send and Execute SQL Query
+=======================================
+
+1.
+public ResultSet executeQuery(String Query) throws SQLException;
+
+ResultSet rs = st.executeQuery("select * from movies");
+
+Use to execute Select Query.
+
+2.
+public int executeUpdate(String Query) throws SQLException
+
+int rowUpdated = st.executeUpdate("delete from employees where esal>1000;");
+
+Applicable to non-select Query that is DML Queries i.e Insert,Update,Delete Queries.
+
+3.
+public boolean execute(String Query) throws SQLException
+
+boolean b = st.execute(dynamically provided query);
+
+Use for both select and non-select Operation.
+If we don't know type of query at RunTime then we can use execute method.
+
+The return type of execute() method is boolean. If it returns true then query is select query and if it return false then query is non select query.
+
+Handle execute Method:-
+
+boolean b = st.execute(dynamically provided query);
+if(b==true){
+ResultSet rs = st.getResultSet();
+}
+else{
+int rowCount = st.getUpdateCount();
+}
+
+Methods we can call on Statement Object.
+
+1. st.executeQuery(String Query);
+2. st.executeUpdate(String Query);
+3. st.execute(String Query);
+4. st.getResultSet();
+5. st.getUpdateCount();
+
+
+execute methods loopHoles:-
+==========================
+
+Case 1 :-
+What will happen if we will use non-select query in executeQuery() method.
+
+ResultSet rs = st.exeuteQuery("update employee set esal='7000' where name='sachin';");
+
+Result varied from driver to driver.
+1.With Type 1 Oracle Driver we will get SQL Exception.
+2.With Type 4 Oracle driver we will not get SQL Exception we will get empty ResultSet but if we will try to access that ResultSet we will get SQL Exception.
+
+Case 2 :-
+What will happen if we will use select query in executeUpdate() method.
+
+int count = st.executeUpdate("select * from employee where name='sachin';")
+
+Result varied from driver to driver.
+1.With Type 1 Oracle Driver we will get SQL Exception.
+2.With Type 4 Oracle driver we will not get SQL Exception we will get number of rows Selected.
+
+Case3 :-
+What will happen if we will use executeUpdate() method for DDL Query.
+
+int count = st.executeUpdate("create table employee();")
+
+Result varied from driver to driver.
+1.With Type 1 Oracle Driver we will get -1.
+2.With Type 4 Oracle driver we will get 0.
+
+===============================================
+
+Step 5 : Process Result from ResultSet.
+=======================================
+
+1.ResultSet is a Iterator which follow Iterator Design Pattern.
+2. ResultSet Object is always associated with Statement.
+3. Per Statement only 1 ResultSet is possible if with same Statement Object reference we are trying to open another ResultSet then first ResultSet will be closed.
+
+
+ResultSet rs = st.executeQuery("select * from employee;");
+
+while(rs.next()){
+
+Susyem.out.Println(rs.getInt(String name)+ " " + rs.getString(String name) + " " + rs.getXXX(String name) );
+
+OR
+
+Susyem.out.Println(rs.getInt(int index)+ " " + rs.getString(int index) + " " + rs.getXXX(int index));
+
+}
+
+If we don't know the index for the given column name we can use below method
+
+int index = rs.findColumn(String ColumnName);
+
+Program to Step 3 :-
+===========================
+ResultSet rs1 = st.executeQuery("select * from employee;")
+ResultSet rs2 = st.executeQuery("select * from customer;")
+
+while(rs1.next()){
+Code
+}
+This will throw SQL Exception that ResultSet s1 is already closed.
+
+6. Close connection.
+=======================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

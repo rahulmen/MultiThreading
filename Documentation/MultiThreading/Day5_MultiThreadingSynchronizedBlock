@@ -1,0 +1,43 @@
+If very few line of code require synchronization then it is not recommended to declare entire method
+as synchronized we have to enclose those few lines of the code by using synchronized block.
+
+The Main advantage of synchronized block over synchronized method is it reduce waiting time of thread and improv
+performance of the system.
+
+We can declare synchronized block as follows:-
+========================================================
+
+1. To get lock of current Object
+
+synchronized(this){
+}
+if a thread got lock of current Object then only thread is allowed to execute this area
+
+
+2. To get lock of particulat object
+
+synchronized(b){
+}
+if a thread got lock of b Object then only thread is allowed to execute this area
+
+3. To get Class level lock.
+
+synchronized(<ClassName>.class){
+}
+if a thread got class level lock od "Display" then only thread is allowed to execute this area
+
+=============================================================================
+
+Lock concept is applicable on object types and class type but not for primitives hence we cant pass
+primitive type as argument to synchronized block otherwise we will get CE sayying
+
+Unexpected Type:-
+Found:int
+Require: reference
+
+int x=10;
+synchronized(x){
+
+}
+
+===================================

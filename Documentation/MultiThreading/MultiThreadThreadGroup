@@ -1,0 +1,84 @@
+MULTITHREADING THREADGROUP
+===========================
+
+1. Based on functionality we can group threads into a single unit which is nothing but ThreadGroup that is threadgroup contains a group of threads.
+2. In Addition to thread ThreadGroup can also contain sub ThreadGroups.
+
+Advantage :- We can perform common operation very easily.
+
+3. Every Thread in java belong to some ThreadGroup.
+4. Main thread belong to Main ThreadGroup.
+5. Every group in java is child ThreadGroup of System Group and act as root for all ThreadGroup in java.
+6. Main ThreadGroup is direct childGroup of System Group.
+7. System Group contains several System level Thread like Finalizer ,ReferenceHandler,System Dispatcher,AttachedListener.
+
+SystemThreadGroup-----------MainThreadGroup---------MainThread
+ |			|					|		|
+ |			|					|		|
+ |			|					|		|										
+Finalizer 	AttachListener	Thread-0	Thread-1
+
+ThreadGroup is a JavaClass present in java.lang package and it is the direct child class of Object.
+
+Constuctor
+===========
+1.
+ThreadGroup g = new ThreadGroup(String name);
+Eg:-
+ThreadGroup g = new ThreadGroup("First Group");
+
+If this line is executed by main ThreadGroup then this ThreadGroup will be part of Main ThreadGroup.
+
+2.
+ThreadGroup g1 = new ThreadGroup(Parent pg,String name);
+Eg:-
+ThreadGroup g1 = new ThreadGroup(g,"SecongGroup");
+Created a new ThreadGroup with a specified GroupName.The parent of this new ThreadGroup is specified Parent Group.
+
+Important Methods in ThreadGroup
+
+1. String getName();  --Return Name of the ThreadGroup
+2. int getMaxPriority(); --Returns max priority of ThreadGroup
+3. void setMaxPriority(int p) :- To set max priority of ThreadGroup.
+
+Default max priority is 10.
+
+Threads in the ThreadGroup that have already higher priority wont be effective but for newly added Thread this max priority is applicable
+
+4. ThreadGroup getParent();
+
+5.  void list();
+g.list(); :- Its prints information about ThreadGroup to the console.
+
+6. int activeCount();
+returns number of active Thread present in the ThreadGroup.
+
+7. int activegroupCount();
+It returns no of active group present in the current thread group.
+
+8. inr enumerate(Thread[] t);
+
+ThreadGroup g = new ThreadGroup(First Group);
+Thread[] t = new Thread[10];
+g.enumerator(t);
+
+To copy all active thread in this ThreadGroup and in this case sub thread group thread will be considered.
+
+9. int enumerate(ThreadGrop[] g;)
+To copy all active sub ThreadGroups into ThreadGroup array.
+
+10. boolean isDaemon();
+
+11. void setDaemon();
+
+12. void interrupt();
+To interrupt all waiting and sleeping thread present in thread group.
+
+13. void destroy();
+
+to destroy all thread present in Current Thread and its Sub-Thread group.
+
+ 
+
+
+ 

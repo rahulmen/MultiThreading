@@ -1,0 +1,11 @@
+Thick Driver :-
+If Driver require some extra component to communicate with DataBase then that driver is called as Thick Driver.
+
+Example :- Type1,2,3 are thick driver as they need ODBC Driver, Vendor Specific Native Libraries and MiddleWare Server to communicate with DataBase.
+
+Thin Driver :-
+If Driver require no extra component to communicate with DataBase then that driver is called as Thin Driver.
+
+Example :- Type 4 Driver that directly communicate with DataBase.
+
+

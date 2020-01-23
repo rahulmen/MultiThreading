@@ -1,0 +1,24 @@
+sleep() Method:-
+
+If any Thread want to pause its execution for defined time then we should use Thread.sleep() method.
+
+Type of Thread Methods :-
+
+1. public static void sleep(long Mills)
+
+This is a static method as we are able to access this method directly from Class Name.
+
+2. public static void sleep(long mills,int nano)
+
+Exception Throws :- Interrupted Exception
+
+Once we have call .sleep() method on any Thread there may be chance of causing Interrupted Exception.
+So if we have called .sleep() method then either we have to Surround it using try-catch or using throws Keyword to throw InterruptedException.
+
+Once we have called .sleep() method on any Thread after defined amount of time Thread scheduler will not directly assign processor to that thread.
+That thread will be moved to Runnable state and then thread scheduler will pick thread as per the priority.
+
+===================
+
+
+

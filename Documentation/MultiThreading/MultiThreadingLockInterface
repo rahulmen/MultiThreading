@@ -1,0 +1,101 @@
+MULTITHREADING LOCK INTERFACE
+==============================
+
+1.There are many disadvantage of using Synchronized area as performance will be reduced and it can raise deadlock problem and thread has to wait until he gets the lock of the Object for execution.
+2.There is no fairness policy like if n number of thread are waiting for Thread Execution then any Thread can get a lock if we set fairness policy then longest waiting thread will get a lock.
+3. No API to tell how many thread are waiting for the lock.
+4. The synchronized keyword compulsory we have to use either at method level or with in a method and it is not possible to use across multiple methods.
+
+To overcome this problem java.lang.concurent.locks package has solution to above problems.
+====================================================================================
+
+It also several enhancement to the programmer to provide more control on concurrency.
+
+This package has 2 important things.
+
+Lock(Interface)
+===============
+
+Lock Object is similar to implicit lock acquired by a thread to execute synchronized method and synchronized block.
+Lock implementation provide more then traditional implicit locks.
+
+Important Method of Lock Interface.
+
+1. void lock();
+
+We can use this method to acquired a lock if lock is already available then immediately current Thread will get that lock.If the lock is not already avaiaible then it will wait until getting the lock.
+It is exactly same behaviour of traditional synchronized keyword.
+
+2. boolean tryLock();
+
+if(l.tryLock()){
+Perform Safe operation
+}
+else{
+Perform alternative Operation
+}
+
+To acquire a lock without waiting in this case thread will never enter into waiting state as if Thread will not get a lock it will start performing alternative Operation.
+
+3. boolean tryLock(long time,TimeUnit unit)
+
+If lock is avalaible then thread will get a lock and continue its execution and if the lock is not avaiable then thread will wait for specific amount of time.
+Still if lock is not avaiable then Thread will continue its execution.
+
+Example :- boolean tryLock(1,TimeUnit.Seconds)
+
+enum TimeUnit{
+NANASECONDS,
+MICROSECONDS,
+MILLISECONDS,
+SECONDS,
+MINUTES,
+SECONDS
+}
+
+4. void lockInterruptibly();
+
+Acquires a lock if it is avaible and returns immediately.
+If lock is not avaiable then it will wait and while waiting if the thread is interrupted then thread wont get a lock.
+
+5. void unlock();
+
+To releases a lock.
+
+
+Note :- To call unlock() method current Thread should be owner of the lock else will get IllegalMonitorStateException.
+
+4. ReentrantLock is the direct child class of Object and this class used to implement Lock Interface.
+
+Methods Present in ReentrantLock Class
+
+public java.util.concurrent.locks.ReentrantLock();
+public java.util.concurrent.locks.ReentrantLock(boolean);
+public void lock();
+public void lockInterruptibly() throws java.lang.InterruptedException;
+public boolean tryLock();
+public boolean tryLock(long, java.util.concurrent.TimeUnit) throws java.lang.I
+nterruptedException;
+public void unlock();
+public java.util.concurrent.locks.Condition newCondition();
+public int getHoldCount();
+public boolean isHeldByCurrentThread();
+public boolean isLocked();
+public final boolean isFair();
+protected java.lang.Thread getOwner();
+public final boolean hasQueuedThreads();
+public final boolean hasQueuedThread(java.lang.Thread);
+public final int getQueueLength();
+protected java.util.Collection<java.lang.Thread> getQueuedThreads();
+public boolean hasWaiters(java.util.concurrent.locks.Condition);
+public int getWaitQueueLength(java.util.concurrent.locks.Condition);
+protected java.util.Collection<java.lang.Thread> getWaitingThreads(java.util.c
+oncurrent.locks.Condition);
+public java.lang.String toString();
+
+
+
+
+
+
+

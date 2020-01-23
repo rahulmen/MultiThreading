@@ -1,0 +1,41 @@
+MAP
+====
+
+1. Map is not child interface of collection.
+2. Unlike Collection in Map we store Objects in form of key-Value pair.
+3. Single pair of key-Value is called Entry.
+
+Common Function of Map:-
+
+1. Object put(Object key,Object value);
+If for corresponding Key if value is already present then it will replace the value and will return old value Object.
+2. void putAll(Map m);
+3. boolean containsKey(Object o);
+4. boolean containsValue(Object 0);
+5. boolean isEmpty();
+6. int size();
+
+
+ENTRY
+=====
+
+Without Map there is no chance of Entry as Entry exist within Map. So Entry(I) is inner Interface of Map Interface.
+
+interface Map{
+interface Entry{
+//There are three Entry Specific Methods.
+ Object getKey();
+ Object getValue();
+ void setValue();
+}}
+
+Some More Methods:-
+1. Set keySet();
+Method to get only Key from a Map as Key don't have duplicate so return type is Set.
+
+2. Collection Values();
+Method to get Values from a Map as Map can contain duplicate so return type is Collection.
+
+3. Set entrySet();
+Method to get individual entry from Map.
+

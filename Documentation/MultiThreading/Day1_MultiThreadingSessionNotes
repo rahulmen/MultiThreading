@@ -1,0 +1,28 @@
+Multitasking means performing different tasks  simultaneously.
+
+There are two types of Multitasking.
+a. Process based Multitasking
+b. Thread Based Multitasking
+
+
+A. PROCESS BASED MULTITASKING
+
+This multitasking is performed at OS level and if we have different task and all task are independent and can be performed simultaneously.
+Example :- Coding on PC and Listening to Music.
+
+B. THREAD BASED MULTITASKING
+
+When we have single program with 10k line of code and Java Interperter executs complete code line by line which take 10 hrs.
+If we can divide our complete code into many independent code so that each different thread and execute our line of code which will reduce our execution time.
+
+In thread based multitasking is performed at Program level and is more client specific.It can not be performed at System Level.
+
+MULTITHREADING
+===================
+
+
+MULTITHREADING is a concept where we can execute our each bunch of independent code with different Thread so that our execution time will be reduced drastically.
+
+Practical Example :- Seaching Particular String in all Files present in our PC.
+
+Instead of searching each in each file one by one. For each folder we can define different thread and perform this task in very less time.

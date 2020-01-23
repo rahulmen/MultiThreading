@@ -1,0 +1,83 @@
+[33mcommit f6cd4ff00868a9a6b6ed4a16f8187c086c78fc51[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Rahul Mendiratta <rahulmendiratta13@gmail.com>
+Date:   Sat Oct 13 13:26:44 2018 +0530
+
+    Modified Synchronization Notes
+
+[33mcommit e0951d26b6313cd920df4bdb2847e130db328b7c[m
+Author: Rahul Mendiratta <rahulmendiratta13@gmail.com>
+Date:   Fri Oct 12 03:44:08 2018 -0400
+
+    Added Notes on Synchronization and its importance
+
+[33mcommit 3c5fd4a739602c6f63e94f4b0809445caf793ebf[m[33m ([m[1;31morigin/new_branch_2[m[33m)[m
+Author: Rahul Mendiratta <rahulmendiratta13@gmail.com>
+Date:   Wed Oct 10 08:58:35 2018 -0400
+
+    First Commit on 2nd Branch
+
+[33mcommit fcbd17718afe0920cfabfaa6dbafb3f1803698b5[m
+Author: Rahul Mendiratta <rahulmendiratta13@gmail.com>
+Date:   Tue Oct 9 08:41:43 2018 -0400
+
+    2nd Commit on New_Branch
+
+[33mcommit 49c91dbcd17bf6e40e7736483899e00cf4390405[m
+Author: Rahul Mendiratta <rahulmendiratta13@gmail.com>
+Date:   Tue Oct 9 08:38:50 2018 -0400
+
+    Changed Enumeration FIle and Added New Test Demo File On New_branch
+
+[33mcommit 69330d7ad838519dd28027a7ba8788a146aa0553[m
+Author: Mendiratta <RXM05IL@fpl.com>
+Date:   Tue Oct 9 08:26:14 2018 -0400
+
+    Added Demo Text File
+
+[33mcommit 450075ff711a768b4ca5a806216f25cd56c2f2ce[m
+Author: Mendiratta <RXM05IL@fpl.com>
+Date:   Mon Oct 8 10:51:05 2018 -0400
+
+    AddedEnumrationDocument
+
+[33mcommit f8cfd960f0609487150672223eb52051a9590ee8[m
+Author: Mendiratta <RXM05IL@fpl.com>
+Date:   Mon Oct 8 08:53:44 2018 -0400
+
+    Added Notes on Enumeration in Java
+
+[33mcommit 6e9dfb70834de4651a8460d190e054cdd4e448fd[m
+Author: Mendiratta <RXM05IL@fpl.com>
+Date:   Wed Oct 3 03:34:32 2018 -0400
+
+    Added Notes On Sleep() and Synchronization
+
+[33mcommit c89e7918559e65b2b098d037b18dac7447d2275f[m
+Author: Mendiratta <RXM05IL@fpl.com>
+Date:   Thu Sep 27 03:37:43 2018 -0400
+
+    Added Notes from session 4 and 5
+
+[33mcommit d12b69db207788575f030f37bf37dc9e3461fcfc[m
+Author: Mendiratta <RXM05IL@fpl.com>
+Date:   Wed Sep 26 04:51:12 2018 -0400
+
+    Added MultiThreading Session 3 and 4 Notes and Code
+
+[33mcommit 409cc6e8493de8810d1e574367a42795be1c95ad[m
+Author: Mendiratta <RXM05IL@fpl.com>
+Date:   Tue Sep 25 03:39:42 2018 -0400
+
+    Added 2nd session notes
+
+[33mcommit 195c37ea7cfb9d95a66537b60dd7a6da4c98b2d5[m
+Author: Mendiratta <RXM05IL@fpl.com>
+Date:   Mon Sep 24 03:01:54 2018 -0400
+
+    Changed Project Name
+
+[33mcommit 273270947a564a0c66dcc8478731b5ed270e32fe[m
+Author: Mendiratta <RXM05IL@fpl.com>
+Date:   Mon Sep 24 02:55:00 2018 -0400
+
+    Added Session 1 Notes

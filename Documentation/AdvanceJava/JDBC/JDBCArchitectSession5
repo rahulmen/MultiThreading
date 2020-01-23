@@ -1,0 +1,86 @@
+JDBC ARCHITECT :-
+==================
+
+													Java Application
+															|
+															|
+															|
+														JDBC API
+															|
+															|
+														Driver Manager
+															|
+															|
+								=============================================================================
+								|								|											|
+								|								|											|
+								|								|											|
+								|								|											|
+							Driver for Oracle			Driver for MySQL							Driver for Sybage
+								|								|											|
+								|								|											|								
+								|								|											|
+							Oracle DB						MySQL DB									Sybage DB
+							
+1. JDBC API Driver Manager to JavaApplication.
+2. Java Application can communicate with any DataBAse with the help of Driver Manager and Driver Software.
+
+
+Driver Manager:-
+===============
+
+1. It is the Key Component of JDBC.
+2. It is a class present in java.sql package.
+3. It is responsible to manage all DataBase drivers.
+4. It is responsible to register and unregister DataBase Drivers.
+
+DriverManager.registerDriver(driver);
+DriverManager.unregisterDriver(driver);
+
+5. It is responsible to establish connection between JavaApplication and the database with the help of Driver software.
+
+Connection con = DriverManager.getConnection(jdbcURL,username,password);
+
+DataBase Driver
+==============
+
+1. Very important component of JDBC Architecture with DataBase driver we con not connect DataBase.
+2. It is responsible to convert DataBase Specific call to JavaCalls and vice versa.
+
+
+Question :- Why Java is platform Independent?
+
+Answer :-
+
+
+													Java Application
+															|
+															|
+															|(After Compiling using javac)
+															|
+															|
+														.class file(Byte Code)
+															|
+															|
+								=============================================================================
+								|								|											|
+								|								|											|
+								|								|											|
+								|								|											|
+							JVM for Windows					JVM for Linux								JVM for Mac	
+								|								|											|
+								|								|											|								
+								|								|											|
+							Window Platform					Linux Platform							   Mac Platform
+							
+							
+							
+Note :- Because of different JVM for each operating System Java is platform independent Similarly because of different Driver Software for each DataBase Java is also DataBase independent.
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+1. Command to get default configuration of super POM:-
+
+mvn help:effective-pom
+
+2. Maven has basically three  lifecycle :-
+
+clean
+default(or build)
+site
+
+3. Basically a lifecycle consist of multiple phases and with each phase there are multiple goals assigned to it. It is also possible that any goal is not not linked to any build phase.
+
+4. A goal represents a specific task which contributes to the building and managing of a project. It may be bound to zero or more build phases. 
+A goal not bound to any build phase could be executed outside of the build lifecycle by direct invocation.
+
+mvn clean dependency:copy-dependencies package
+
+clean and package are build phases where as dependency:copy-dependencies is a a goal.
+
+
+
+
+

@@ -1,0 +1,82 @@
+1. What is Synchronized keyword where we can block?
+
+It is a modifier applicable for methods but not for classes and variables.
+
+2. Explain advantage if synchronized Keyword?
+
+We can resolve Data Inconsistency Problem but performance will be down graded.
+
+3. What is Race Condition?
+
+If multiple thread are operating on same java object and cause data inconsistency problem it is called
+Race Condition and can be controlled by using Synchronized keyword.
+
+4. What is Object lock and when it is required?
+
+Every Object in java has a unique lock that is Object Lock.When a thread wants to execute synchronized 
+method defined in a class then only thread need Object lock.
+
+5. What is class level lock and when it is required?
+
+Every class in java has a unique lock that is called Class Lock. When a thread wants to execute static
+synchronized method then thread needs class level lock.
+
+6. What is the difference b/w class level lock and object level lock?
+
+7. While a thread executing synchronized method on given object is remaining thread are allowed to execute
+any other synchronized method simultaneously on same object?
+
+No
+
+8. What is synchronized block?
+
+9 How to declare synchronized block to get lock of current object
+
+synchronized(this{
+}
+
+//Class level lock
+
+synchronized(ClassName.Class){
+}
+
+10. Advantage of synchronized block over Synchronized Method?
+
+Performance will be Improved.
+
+11. Is a thread can acquire multiple lock simultaneously?
+
+Yes from different Objects
+
+Example :-
+
+Class X
+{
+public synchronized void m1(){
+//Here Thread had lock of X only
+Y y = new Y();
+//Here Thread had lock of X and Y
+synchronized(y){
+//Here Thread had lock of X and Y and Z
+Z z = new Z();
+synchronized(z){
+}}}}
+
+
+X x = new X();
+x.m1();
+
+//Here thread has lock of X,Y,Z Object
+==================================================================
+
+12. What is Synchronized statement?
+
+The statements present in synchronized method and synchronized block are called synchronized statement.
+
+
+
+
+
+
+
+

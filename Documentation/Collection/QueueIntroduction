@@ -1,0 +1,49 @@
+QUEUE
+======
+
+1.If we want to represent group of individual Object prior to processing then we should go for Queue.
+2.It is the child Interface od Collection.
+3.It is added into Collection framework in V1.5
+4.LinkedList,PriorityQueue and BlockingQueue is the classes that implement Queue Interface.
+5.In Queue Elements are added on FIFO(First In First Out) principle.
+6. Null is not accepted as an entry in Queue.
+7. If we are depending on default natural Sorting Order then We can not store hetrogeneous element(If we will do we will get Class caste Exception) 
+    but if it is Customized we can store hetrogenous element too.
+
+Important Methods:-
+
+1. boolean offer(Object o);
+
+Use to add element in an Queue.
+
+2. Object poll(Object o)
+
+return and remove head of the Queue. If head is null it will return Null.
+
+3. Object remove(Object o)
+
+return and remove head of the Queue. If head is null it will throw Runtime Exception NoSuchElementException.
+
+4. Object peek(Object o)
+
+return head of the Queue. If head is null it will return Null.
+
+5. Object element(Object o)
+
+return head of the Queue. If head is null it will throw Runtime Exception NoSuchElementException.
+
+
+Constructor
+======================
+
+Queue<Object> q = new priorityQueue();
+default initial Capacity 11.
+
+Queue<Object> q = new priorityQueue(int initialCapacity);
+Customized Capacity
+
+Queue<Object> q = new priorityQueue(int Capacity,Comparator<> c);
+Customized Sorting 
+
+Queue<Object> q = new priorityQueue(SortedSet s);
+
