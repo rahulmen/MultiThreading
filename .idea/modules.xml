@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MultiThreading-master.iml" filepath="$PROJECT_DIR$/MultiThreading-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ClassesPackage.iml" filepath="$PROJECT_DIR$/ClassesPackage.iml" />
     </modules>
   </component>
 </project>

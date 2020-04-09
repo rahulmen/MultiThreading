@@ -1,0 +1,28 @@
+HASHTABLE
+===========
+
+1. It is a child class of Table Interface.
+2. Insertion Order is not preserved and Keys can not be duplicate but value can be duplicate.
+3. Null can not be used in both keys as well as value.
+4. All Method in HashTable are synchronized.
+5. HashTable is Thread-safe.
+6. Best to use when our frequent operation is searching.
+7. Implement Serializable and clonable but not random Access.
+
+Constructor of HashTable:-
+
+1. HashTable m = new HashTable();
+
+Created HashTable with default initial capacity 11.
+
+2. HashTable m = new HashTable(int intialCapacity);
+
+Created HashTable with providied initialCapacity.
+
+3. HashTable m = new HashTable(int initialCap,float floatratio);
+
+4. HashTable m = new HashTable(Map m);
+
+NOTE :- In HashTable element are added on basis of hashCode of Keys
+
+Program explained in HashTableExample1.java

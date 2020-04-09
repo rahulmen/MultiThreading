@@ -1,0 +1,66 @@
+NAVIGABLESET
+===============
+
+1. Its a child interface of SortedSet and was introduced in 1.6V.
+2. Class that implement NavigableSet is TreeSet.
+3. NavigableSet is introduced if we want to navigate back and forward across a particular Object.
+4. Element are added on basis of default natural sorting order (For String its alphabetic order for integer its ascending order)
+5. Null is not accepted and also not hetrogenous element are allowed with Default Sorting Order.
+
+Example :- Getting flight information just before 10.00AM and after 10.00AM.
+
+NavigableSet has certain method that can help you in above Scenario.
+
+Methods:-
+=========
+
+1. Object ceiling(Object e);
+
+Returns the first Object that is equal to and greater than Object e
+
+2. Object floor(object e);
+
+Returns the Object that is equal to and lower than Object e
+
+3. Object higher(Object e);
+
+Returns the first Object that is greater than Object e
+
+4. Object lower(Object e)
+
+Returns the first Object that is lower than Object e
+
+5. NavigableSet desendingSet(Set s);
+
+Return the Set in reverse Order.
+   
+6. Object pollFirst();
+
+Return and removes the Object at Top of Set.  
+
+7. Object pollLast();
+
+Return and removes the Object at bottom of Set.
+
+NAVIGABLEMAP
+==============
+
+METHODS:-
+========
+
+1. Object ceilingKey(Object e);
+
+2. Object floorKey(object e);
+
+3. Object higherKey(Object e);
+
+4. Object lowerKey(Object e)
+
+5. NavigableSet desendingMap(Set s);
+   
+6. Object pollFirstEntry();
+
+7. Object pollLastEntry();
+  
+
+ 

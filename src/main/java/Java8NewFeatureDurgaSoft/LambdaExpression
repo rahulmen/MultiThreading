@@ -1,0 +1,46 @@
+Lambda Expression :-
+
+1. Lambda Expression is an anonymous function.
+2. It is not having name,modifier and return type.
+
+
+Example :-
+
+public int getLength(String name){
+return name.length;
+}
+
+can be written as :- (String name) -> {return name.length;}
+
+Note :- There is only one statement then curly braces are also optional so we can write above statement as
+
+(String name) -> return name.length;
+
+Type reference :-
+====================
+
+Some time based on the context compiler can guess the formal parameter type which is known as Type reference.
+So we dont need to mention type of the formal parameter like int,float,double,String.
+
+(int a,int b) -> {return (a+b);}
+can be written as
+(a,b) -> return (a+b);
+
+
+(String name) -> {return name.length};
+can be changed to         //If there is only single line of code then curly braces are optional
+(String name) -> return name.length;
+can be changed to         //Based on the context compiler can guess the formal parameter type so writing String is also optional.
+(name) -> return name.length;
+can be changed to         //Based on the context compiler can guess the return type so writing return is also optional.
+(name) -> name.length;
+can be changed to         //If there is only one formal parameter then brances are also optional
+name -> name.length;
+
+
+
+
+
+
+
+

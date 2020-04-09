@@ -1,0 +1,73 @@
+Pattern Class split()
+
+Pattern class contain split() method to split the target string according to a particular pattern.
+
+
+String Class split()
+
+String class also contain split() method to split the target string according to a particular pattern.
+
+String s = "Durga Software Solution";
+String[] s1 = s.split("\\s");
+
+for(String s2:s1){
+System.out.println(s2);
+}
+
+Note :- Pattern class split() method can take target String as argument whereas String class split() method can take pattern as argument.
+
+StringTokenizer Class
+======================
+
+It is a specially designed class for tokenization activity.
+
+StringTokenizer present in java.util package.
+
+Default RegularExpression for StringTokenizer is Space.
+=====================================================================================
+
+1. Write a regular expression to represent all valid 10 digit mobile numbers.
+
+Rules :-
+Every number should contain exactly 10 digits.
+First digit should be 7 or 8 or 9. [789][0-9][0-9][0-9][0-9][0-9][0-9] or [7-9][0-9]{9}
+
+10 digit or 11 digit 
+0?[7-9][0-9]{9}
+
+10 digit or 11 digit or 12 digit 
+(0|91)?[7-9][0-9]{9}
+
+Write a regular expression to write all valid maidIds
+d123_xyz.k@gmail.com
+[a-zA-Z0-9][a-zA-Z0-9._]*@[a-zA-z0-9]+([.][a-zA-Z]+)+
+
+Only Gmail Ids :-
+[a-zA-Z0-9][a-zA-Z0-9._]*@gmail[.]com
+
+
+Write a regular expression to represent all Yava language Identifiers.
+
+Rules :-
+1. Allowed characters are a to z and A to Z and 0 to 9 and # and $
+2. Length of each identifier should be atleast 2
+3. First character should be lower case alphabet symbol from a to k
+4. Second character should be a digit divisible by 3. (0,3,6,9)
+
+[a-k][0369][a-zA-Z0-9#$]*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

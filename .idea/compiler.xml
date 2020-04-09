@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="MultiThreading-master" />
+        <module name="ClassesPackage" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="MultiThreading-master" target="8" />
+      <module name="ClassesPackage" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

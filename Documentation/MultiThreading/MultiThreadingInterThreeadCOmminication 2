@@ -1,0 +1,47 @@
+INTER THREAD COMMUNICATION :-
+=============================
+
+1. Three are three important method for inter thread communication.
+
+ public final native void wait(long) throws java.lang.InterruptedException;
+ public final void wait(long, int) throws java.lang.InterruptedException;
+ public final void wait() throws java.lang.InterruptedException;
+ public final native void notify();
+ public final native void notifyAll();
+ 
+ NOTE IMPORTANT :-
+ These method are defined into Object class because thread needs to call this method on any java Object it can be Queue,Student,Customer etc.
+ Whereas other method yield(),sleep(),join() will only be called on Thread class Object t
+ 
+ 2. If any thread call wait() method on any Java Object it will immediately releases the lock of that Object and move into waiting state.
+ 
+ 3. As Single thread can have multiple lock of different Object so that Thread will only release lock of that particular Object while call wait() method on that Object it will keep loc of all other Objects.
+ 
+ 3. If any thread call notify() method on any java Object it will not immediately release the lock of that Object and also move into waititng state.
+ 
+ 4. For any thread to call wait() method on any java Object that thread need to be defined in Synchronized block if not called from synchronized block we will get 
+ 	IllegalMonitorStateException.
+ 	
+ 5. wait() method in Object class is overloaded method with and without timeout and all throws InterruptedException that is checked exception.
+ 
+ THREAD LIFECYCLE IN CASE OF INTER THREAD COMMUNICATION :-
+ ============================================================
+
+ 
+ MyThreat t = new MyThread();	t.start()					if thread scheduler assigned processor							if t.run() completed
+							================				============================================				========================
+Thread State --- New/Born					Runnable() state											Running() state							DEAD STATE
+																											|	
+																											|
+																											|
+																											|
+																											|
+																								When any thread id in running state and it calls
+																								.wait() method on any java Object then it will move into
+																								waiting state which can get finish in three cases else another thread
+																								calls .notify() method on same java Object or Time defined in wait(timeout) is 
+																								over and if that thread is interrupted by any other thread.
+																								Once that thread waiting state is over it will not directly move into
+																								Runnbale state first that thread needs to wait more to get lock of that Object 
+																								and then it can move into Runnbale state.
+																								

@@ -1,0 +1,56 @@
+1. Daemon Thread are those thread which are running in background.
+2. The main purpose of daemon Thread is to provide support to non-Daemon Thread.
+3. Main thread is the only thread that is by default non daemon thread.
+4. If parent thread is non-daemon thread then its child thread should also be non-daemon thread and vice versa.
+
+There are two methods to check and set Threat status.
+
+public final boolean isDaemon();
+This method will check and return whether a thread is damon or non daemon.
+
+public final void setDaemon(boolean b); 
+This method will set the thread status.
+
+Note :- But we can only call setDaemon(boolean b) method before the life of thread is started else we will get IllegalThreadStateException.
+
+We can not use setDaemon(boolean b) method on main thread because it is started by JVM as soon as programmer get control of program.
+
+It is JVM responsibility to increase the priority of daemon thread when non-daemon thread needs more support.
+
+Example :- While main thread is executing the flow if we face any memory issue then JVM will increase priority of daemon thread Garbage Collector so that it will free some space for Main thread to execute.
+
+NOTE :- As soon as all non daemon thread execution got complete all daemon thread will be stopped immediately.
+
+====================================================
+
+GREEN THREAD MODEL :- Green thread are those thread which are completly dependent on JVM for execution and Operating system dont play any role in execution.
+NATIVE OS MODEL :- IN which thread execution are dependent on both JVM and OS behind
+
+stop() method :- This method is used to stop execution of main thread.If main thread will call stop() method then that thread will be stopped and will move into rest stage.This method is depricated and is not suggested 
+to use.
+suspend() method :- This method is used to suspend thread execution and will move into suspended state until resume() method is called on same thread.
+
+
+
+																											t.stop()--------------------------Will directly move into dead state(DEAD STATE)
+																												|
+																												|
+																												|			
+MyThreat t = new MyThread();	t.start()					if thread scheduler assigned processor				|			if t.run() completed
+							================				============================================		|		========================
+Thread State --- New/Born					Runnable() state											Running() state							DEAD STATE
+																											|	
+																											|
+																											|
+																											|
+																											|
+																								When any thread id in running state and it calls
+																								.wait() method on any java Object then it will move into
+																								waiting state which can get finish in three cases else another thread
+																								calls .notify() method on same java Object or Time defined in wait(timeout) is 
+																								over and if that thread is interrupted by any other thread.
+																								Once that thread waiting state is over it will not directly move into
+																								Runnbale state first that thread needs to wait more to get lock of that Object 
+																								and then it can move into Runnbale state.
+																								
+  

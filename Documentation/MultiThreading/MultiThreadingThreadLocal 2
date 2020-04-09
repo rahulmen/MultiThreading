@@ -1,0 +1,14 @@
+1.Thread Local is a direct child class of Object present in java.langpackage.
+
+2.We use ThreadLocal class to store local Variable of multiple Thread so in lymen terms ThreadLocal is a box which contains LocalVariable for all active Thread.
+
+3.If the Thread has moved into dead state then its corresponding localVariable present in ThreadLocal is eligible for garbage Collection.
+
+4.Thread Local class has following important method.
+
+protected object initialValue();
+public Object get();
+public void set(T);
+public void remove();
+
+5. We can override initialValue method to set initialValue of each Thread LocalVariable.

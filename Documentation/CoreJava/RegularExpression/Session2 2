@@ -1,0 +1,45 @@
+Character Classes :-
+
+[abc] Either a or b or c
+[^abc] Expect a and b and c
+[a-z] Any lower case alphabet symbol from a to z
+[A-Z] Any upper case alphabet symbol from A to Z
+[a-zA-Z] Any aplhabet Symbol
+[0-9] Any digit from 0 to 9
+[a-zA-z0-9] Any alphanumeric Symbol
+[^a-zA-z0-9] Expect Any alphanumeric Symbol(Special Character)
+
+Pattern p = Pattern.compile("x");
+Matcher m = p.matcher("a3b#k@9Z")
+
+Predefined Character Classes:-
+
+\s :- Space Character
+\S :- Expect space character
+\d :- Any digit from 0-9[0-9]
+\D :- Expect digit
+\w :- Any word Character[a-zA-z0-9]
+\W :- Expect Word Character(Special Chaacters)
+. :- Any Character
+
+Pattern p = Pattern.compile("x");
+Matcher m = p.matcher("a3b#k@9Z")
+
+Quantifiers:-
+================
+Means Quantity
+
+We can use quantifier to specify no of occurances to match.
+
+a :- Exactly one 'a'
+a+ :- At least one 'a'
+a* :- Any no of a including zero number
+a? :- At most one a
+
+
+
+
+
+
+
+

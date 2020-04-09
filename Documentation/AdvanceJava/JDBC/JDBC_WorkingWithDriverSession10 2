@@ -1,0 +1,56 @@
+Working With Type2 Driver :-
+========================================
+
+1. Configure Odbc6.jar(Oracle11g) in classPath either temporary using set classpath = ".jar file path" or permanently by setting in Environment Variable.
+2. Identify Driver Class Name
+
+Jar Name :-
+Odbc6.jar(Oracle11g) (Also called as Thin Driver)
+
+Driver Class Name :-
+oracle.jdbc.driver.OracleDriver
+oracle.jdbc.OracleDriver
+
+JDBC URL :-
+jdbc:oracle:oci8@XE
+
+XE :- SystemID(Every DB has unique ID that is SystemID) or ORCL or ORLCI
+
+How to Identify SystemID:-
+	
+select * from global_name;
+OR
+tnsnames.ora
+
+Working With Type4 Driver :-
+==================================
+
+Jar Name :-
+Odbc6.jar(Oracle11g) (Also called as Thin Driver)
+
+Driver Class Name :-
+oracle.jdbc.driver.OracleDriver
+oracle.jdbc.OracleDriver
+
+JDBC URL :-
+jdbc:oracle:thin:@localhost:1521:XE
+
+jdbc :- main protocol
+oracle :- driver protocol
+thin :- driver information
+localhost :- machine on which oracle is running
+1521 : default port number on which oracle is running
+XE : SystemID
+
+How to Identify SystemID:-
+	
+select * from global_name;
+OR
+tnsnames.ora
+
+
+
+
+
+
+

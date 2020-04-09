@@ -1,0 +1,48 @@
+Storage Area
+============
+
+Place where we can store our data.
+
+Two Types:-
+==============
+
+1. Temporary Storage Area(All JVM memory Area are Temporary Storage area like HEAP,STACK,METHOD Area)
+2. Permanent Storage Area(Persistent Storage Area like FileSystem,DataBases,DataWarehouses,BigDataHadoop)
+
+
+JDBC Version:-
+==============
+
+1.From JavaApplication if we want to communicate with DataBase then some technology must be required that technology is called JDBC.
+
+Java        ------------>JDBC--------------------------------->DataBase
+Application<------------(Java DataBase Connection)<------------(Oracle,Cybage)											 
+	
+2. JDBC is part of J2SE(Java Standard Edition).
+		
+3. JDBC is a specification(Guideline) defined by Java Vendor(Oracle) and implemented by DataBase Vendor.
+
+4. DatBase Vendor provided implementation is called Driver Software that is mostly developed in Java.
+
+JDBC Feature :-
+
+1. Standard API(DataBase Independent API).
+2. Platform Independent API.
+3. We can perform CRUD Operation very easily using JDBC.
+C:- Create (insert)
+R:- Retrieve(select)
+U:- Update
+D:- Delete
+	
+4. Using JDBC we can apply complex query like inner join and outer join.
+
+5.
+List of Vendor that provide support for JDBC :-
+https://www.oracle.com/technetwork/java/index-136695.html
+
+6. JDBC Version 4.2 is in Java SE 8.
+
+
+
+
+

@@ -1,0 +1,8 @@
+HASHMAP
+=======
+
+1. Its a child class of Map Interface.
+2. Insertion Order is not preserved and values are stored on basis of HashCode of Keys.
+3. Key can not have duplicate but value can contain duplicate.
+4. key can contain null only once but value can have null multiple times.
+5. 

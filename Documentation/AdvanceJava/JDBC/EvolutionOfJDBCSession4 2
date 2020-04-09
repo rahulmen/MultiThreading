@@ -1,0 +1,72 @@
+Technique used to developers in late 1990 for DataBAse Connection.
+
+C/C++ Application			===========>(Oracle 
+(Oracle Specific Libraries) <===========DataBase)
+
+C/C++ Application			===========>(SQL 
+(SQL Specific Libraries) <===========DataBase)
+
+In Late 1990 Applications were DataBase Dependent so for each Different DataBase we have to maintain new Application which increases mantainence Problem.
+
+Example :- CDBA Phone with comes with Inbuild Sim.
+
+===========================================================
+
+Above Problem got resolved when Microsoft comes with ODBC (Open DataBase Connectivity) introduced in 1992.
+
+WithOut ODBC :-
+================
+
+3 Application for 3 DataBases so application is platform dependent
+
+With ODBC :-
+========================
+
+With ODBC Application can communicate with any dataBase it just want to select corresponding ODBC Driver.
+
+					   	=========ODBC Driver for Oracle================Oracle DB
+					  |
+					  |
+C/C++ Application------	=========ODBC Driver for SQL=====================SQL DB
+					  |
+					  |
+					  	=============ODBC Driver for Sybage==============Sybage DB
+					  
+					  
+
+We dont require to use any DataBase Specific Libraries in our Application.
+
+So we have 1 Application for 3 DataBases so out Application is platform Dependent
+
+======================================
+
+Limitation of ODBC:-
+
+1. ODBC can only be used in Window Machine. If we will use Java with ODBC then we will loose Java platform Independent Feature.
+2. ODBC is written in C/C++ so internally Java Calls needs to be converted to C/C++ calls and vise versa so we may get performance issue.
+
+=====================================
+
+JBDC(Introduced by SUN in 1997)
+
+
+
+					   	=========JDBC Driver for Oracle================Oracle DB
+					  |
+					  |
+Java Application------	=========JDBC Driver for SQL=====================SQL DB
+					  |
+					  |
+					  	=============JDBC Driver for Sybage==============Sybage DB
+					  	
+1. JDBC is platform independent technology so we will not loose Java Platform dependent feature.
+2. JDBC Driver is implemented in Java. so we will not get performance Issue	
+
+
+				  	
+					  	
+					  	
+					  	
+					  	
+
+

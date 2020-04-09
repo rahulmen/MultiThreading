@@ -1,0 +1,144 @@
+JDBC DRIVER
+============
+
+Types of JDBC Driver
+
+1. Type 1 Driver(JDBC-ODBC Bridge Driver)
+2. Type 2 Driver(Native API partially Java Driver or Native Driver)	
+3. Type 3 Driver(All Java Net protocol Driver or Network Protocol Driver or MiddleWare Driver)
+4. Type 4 Driver(Pure Java Driver or Native protocol Driver or Thin Driver)
+
+
+TYPE 1 DRIVER :-
+===============
+
+Java Application(JDBC)=======Type1 Driver=======ODBC Driver======DataBase.
+
+1.Introduced by SUN Microsystem as a part of JDK.
+2.Act as a bridge between JDBC AND ODBD so called as JDBC-ODBC Bridge Driver.
+Java Application(JDBC),Type1 Driver,ODBC Driver all need to be avaialble on Client Machine.
+
+Advantage :-
+1. It is DataBase Dependent.
+2. Easy to Use.
+
+
+Disadvantage :-
+
+1. Performance is very low because two conversion is done first from JDBC Driver call to ODBC Driver Call and then ODBC Driver call to DataBase Call.
+2. No Support after Java Version 1.7
+3. As ODBC Driver can only be used for Windows so it is also limited to Windows Platform.
+
+TYPE 2 DRIVER :-
+===============
+
+Java Application(JDBC)=======Type2 Driver=======DataBase Vendor Specific Native Libraries======DataBase.
+
+1. It is also known as Native API Partially API Driver.
+2. It is exactly same as Type 1 Driver only difference is ODBC Driver is replaced by DataBase Vendor Specific Native Libraries.
+3. Native libraries means a set of function written in non-Java(mostly C/C++).
+4. We have to install vendor provide native libraries on Client Machine.
+
+Advantage :-
+
+1. When compared to Type1 Driver performance is high because Type2 Driver converts JavaCalls into Database Specific Native Libraries call which is understandable by DataBAse.
+2. Portability is more. As we can use Type2 Driver on multiple difference Platform.
+
+Disadvantage :-
+
+1. It is Platform dependent each time we change Platform we need different Type2 Driver.
+2. It is DataBase Dependent each time we change DataBase we need different Type 2 Driver.
+3. Support for DataBase Vendor Specific Native Libraries is only provided by Oracle but not from mYSQL.
+
+Note :- It is a worst JDBC Driver to use as it is both Platform and DataBase Dependent Driver.
+
+Example of Type 2 Driver :-
+
+1. OCI Driver(Oracle Call Driver) is Type 2 Driver provided by Oracle.
+2. If We want to use OCI Driver then we want OCI Driver and OCI Libraries(.jar file) on our Client Machine and also need to set Class Path.
+
+
+Java Application(JDBC)=======OCI Driver=======OCI Libraries======DataBase.
+
+TYPE 3 DRIVER :-
+===============
+
+Java Application(JDBC)=======Type3 Driver=======MiddleWare Server(IDS Server)======DataBase.
+
+IDS :- Internet DataBase Server
+
+1. It is also known as Java Net protocol Driver or Network Protocol Driver or MiddleWare Driver.
+2. This driver converts Java Specific calls into MiddleWare Specific calls which is then converted into DataBase Call via MiddleWare.
+3. It is best choice for Industry Use.
+4. Java Application(JDBC),Type3 Driver need to be on Same Machine.
+5. MiddleWare uses either Type1,Type 2 or Type 4 Driver.
+
+Advantage :-
+1. Platform Independent.
+2. DataBase Independent.
+
+Disadvantage :-
+1. Performance is low because it also needs two level of conversion.
+2. Extra cost of Maintaining MiddleWare Server.
+
+Note :- The only Driver which is both platform and DataBase Independent hence it is recommended to use.
+
+TYPE 4 DRIVER :-
+===============
+
+Java Application(JDBC)=======Type4 Driver======DataBase
+
+1. Also known as Pure Java Driver or All Java Native protocol Driver or Thin Driver.
+2. This Driver uses DataBase Specific Native Protocols to communicate with DataBase.
+3. This Driver directly Convert JDBC Call into DataBase Specific Calls.
+4. It is platform independent Driver because it is purely developed into Java.
+5. It is called Thin Driver because its don't need any ODBC Driver or Native Libraries or MiddleWare Server.
+
+Advantage :-
+
+1. It is Platform Independent.
+2. Its Performance is very high because of SIngle COnversion only.
+
+Disadvantage :-
+
+1. It is DataBase Dependent.
+
+Note :- TYpe 4 driver is provided by DataBase Vendor
+
+Q :- Which Driver to be used in which Scenario ?
+Ans :-
+
+1.If we are only going to use single dataBase then it is best to use Type-4 Driver . It is ideal for standAlone Application and Small Scale Web Application.
+2. If we are going to handle multiple DataBAse then use Type 3 because it is DataBase Dependent also. Ideal for Large/Enterprise Scale Application.
+
+3. If Typ3 4 and 3 is not available then we can use Type 2 and if Type 2 is not avaiable then we use Type 1 .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+

@@ -1,0 +1,44 @@
+Collections Class
+=================
+
+1. It is the utility Class to overcome drawback that is present in CollectionFrameWork.
+
+It contains methods that we can use to synchronized version of List,Map and Map.
+
+public static List getSynchronizedList(List l);
+public static Set getSynchronizedSet(Set s);
+public static Map getSynchronizedMap(Map m);
+
+2. For Set and Map we have SortedMap and SortedSet interface which will Sort them but for List we don't have any.So Collection class provide some method for Sorting and Searching in List.
+
+List Sorting Methods in Collections Class:-
+=========================================
+
+public static void sort(List l);
+public static void sort(list l,Comparator c);
+
+3. Collections class also have some methods to Searching elements is List.List searching is based on BinarySearch and for BinarySearch we want our List to be Sorted First else we will get 
+   irregular Output.
+
+List Searching Methods in Collections Class :-
+============================================
+
+public static int binarySearch(List l,Object o)
+
+Object o :- Object to be searched.
+
+This Method returns the index if it find the element in passed List and if element is not present then it will return the search index.
+
+Like if B is not present in List and We are trying to Search it and A is already on index 0 then it will return -2 because search index for A is -1.
+
+public static int binarySearch(List l,Object o,Comparator c);
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+Case Study :-
+
+Display d1 = new Display();
+Display d2 = new Display();
+MyThread t1 = new MyThread(d1,"Dhoni")
+MyThread t2 = new MyThread(d1,"Dhoni")
+t1.start();
+t2.start();
+
+EvenThough wish method is synchronized we will get irregular output because thread are operating on different java object.
+
+Conclusion:-
+ 
+If multiple thread are operating on multiple object then synchronization is not required.
+If multiple thread are operating on same java object then synchronization is required.
+
+Class Level Lock :-
+
+Every class in java has a unique lock which is nothing but class level lock.
+If a thread wants to execute a static synchronized method then Thread require class level lock.
+Once Thread got class level lock then it is allowed to execute any static synchronized method of that class.
+Once method execution completed automatically thread releases the lock.
+
+While a thread executing static synchronized method the remaining thread are not allowed to execute any static synchronized method
+of that class simultaneously but remaining thread are allowed to execute the following method simultaneously.
+ 
+1. Synchronized instance method.
+2. Normal Instance Method. 
+
+
+
+
+ 

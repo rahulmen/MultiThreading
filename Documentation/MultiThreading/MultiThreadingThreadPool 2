@@ -1,0 +1,34 @@
+MULTITHREADING THREADPOOL
+=========================
+
+1. In MultiThreading thread pool is like if we want same thread to execute multiple time in that case we can use thread pool concept.
+2. This way overall performance of the system will be improved as we don't want to define n number of thread to execute n task.
+
+This way we will build a thread pool of size 3 so a request will come and thread will be assigned to that request it will complete the task and again thread will be restored in thread Pool.
+
+ExecutorService executor = Executors.newFixedThreadPool(1);
+executor.submit(Runnable r);
+executor.shutDown();
+
+Note :- ThreadPool will be terminated once we call shutDown() method.
+
+
+Difference Between Runnbale and Callable:-
+===========================================
+
+We use Callable when we want after job execution it should return something.
+
+1. Runnbale interface has only 1 method run() return type of that method is void.
+1. Callable interface has only 1 method call() return type of that method is Object.
+
+
+2. Runnbale Interface is present in java.util package.
+2. Callable interface is present in java.util.concurrent package
+
+3. If there is a chance of raising checked exception in run() method of Runnable Interface then we have to handle it using try catch mechanism only.
+3. But in call() method we can handle it either using try-catch or via using throws keyword.
+
+Note :- See ThreadPoolExample2
+
+
+

@@ -1,0 +1,7 @@
+1. Deadlock is the situation when two thread are in waiting state and waiting for another thread to provide lock of another object.
+
+2. In java deadlock situation comes because of synchronized block
+
+Starvation :- When there is a long wait for any thread before it get processor from thread Schedular is called starvation.
+
+Like if we have 1 cr thread and only 1 thread has priority of 1 all other has 10.So that thread will be get a chance in last.

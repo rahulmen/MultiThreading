@@ -1,0 +1,50 @@
+Introduction to Advance Java
+============================
+
+With Core Java Knowledge we can only develop stand alone application which can only run on single machine like Calculator but using advance Java we can develop Web Application(Application which 
+provide service over web)which multiple user across the globe can access at single time like gmail.com and facebook.com.
+
+Three Advance Java Topic:-
+
+1. JDBC
+2. Servlets
+3. JSPs
+
+Where to use above three technology:-
+
+1. JSP(Java Server Pages) :- Wherever we want to develop view Component(Pages end user can see) and wherever presentation login to develop.
+Like LoginPage(login.jsp) HomePage(home.jsp) and ErrorPage(error.jsp) of Gmail.com application
+
+2. Servlet :- Wherever processing logic is required we should go for Servelet.(ProcessServlet) and wherever some processing or business 
+	logic is required
+
+3. JDBC :- Sometime a java component required to communicate with DataBase.Its a technology that help Java Component to communicate with DataBase 
+
+FlowChart:-
+============
+
+LoginPage(loginpage.jsp)-----enterusername/password------Server Processing(server.servelet)------HomePage(homepage.jsp)
+																	|
+																	|
+																	|
+																JDBC(Java Component need to communicate with DataBase)
+																	|
+																	|
+																	|
+																DATA BASE
+																
+																
+																
+Editors of Java:-
+
+1. Java Standard Edition(J2SE/JSE) ----Core Java+JDBC(Used to develop Standalone Application)
+2. Java Enterprise Edition(J2EE/JEE) ------Servlets+JSPs (USed to develop Web Application)
+3. Java Micro Edition(J2ME/JME) -----Used to develop RemoteController,WashingMachine and MobileApplication
+
+Version:-
+JDBC :- 4.2 Version
+Servlets :- 3.1V
+JSPs :- 2.3V
+
+		
+								

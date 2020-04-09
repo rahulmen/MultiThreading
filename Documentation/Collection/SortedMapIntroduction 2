@@ -1,0 +1,47 @@
+SORTEDMAP
+============
+
+1. SortedMap is the child interface of Map Interface.
+2. Implementation class for SortedMap interface is TreeMap.
+3. In SortedMap object are stored according to sorting order of Keys.
+4. We can store both homogenous and hetrogenous object in values and in Keys we can store homogenous objects only if we are dependent on default natural sorting order.
+(We will get Class caste Exception if we will try to store hetrogenous Object in keys )
+5. If we have our own sorting order then we can even store hetrogenous object in keys.
+6. Null acceptance is not possible in Keys if we will store NULL in key then we will get NullPointerException but we can store NULL in values.
+
+SortedMap method:-
+Note :- All method are abstract.
+
+1. Object firstKey();
+2. Object lastKey();
+3. SortedMap tailMap();
+4. SortedMap headMap();
+5. SortedMap subMap();
+6. Comparator comparator();
+
+
+TREEMAP
+========
+
+1. It is a Implementation class of SortedMap Interface.
+2. In this class Insertion Order is based on the Sorting order we are using  either default or user defined.
+3. Null is not allowed in Key but allowed in value.
+
+Constructor
+-----------
+
+TreeMap m = new TreeMap();
+Element are added based on default natural Sorting Order.
+
+TreeMap m = new TreeMap(Map m);
+Create Equivalent TreeMap for Map passed.
+
+TreeMap m = new TreeMap(Comparator c)
+Element are added based on customized Sorting.
+
+TreeMap m = new TreeMap(SortedMap m);
+Create equivalent TreeMap for Provided SortedMap.
+
+
+
+

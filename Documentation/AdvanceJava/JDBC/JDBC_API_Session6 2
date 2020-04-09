@@ -1,0 +1,53 @@
+JDBC API
+==========
+
+
+JDBC API(Java Application)=========Driver Software==========DataBase
+
+1. JDBC API defines several classes and interface which can be used for DataBase Communication.
+2. Programmer and DataBase Vendor are supposed to use JDBC API.
+3. There are two package in JDBC API that is java.sql and javax.sql
+
+Package java.sql :-
+
+This package contains basic Interface and Classes like DriverManager,Connection,Statement,ResultSet.
+
+Package javax.sql :-
+
+This package contains advance Interface and Classes like RowSet and ConnectionPool etc and also have SubPackage like javax.sql.rowset , javax.sql.rowset.serail
+
+
+4. Programmer is not responsible to provide implementation to Interface present in JDBC API. DataBaseVendor(Oracle,MySQL) is responsible
+
+5. DataBase Driver Software(Oracle DB Driver) :- Is the set of implemented Classes(.jar file) that implement interface present in JDBC API.
+
+6. Using this Driver Software we can communicate to DataBase.
+
+7. Every DriverSoftware is identified by the special class that is Driver.class which is implementation class of java.sql.Driver Interface.
+
+Example :-
+
+Type-1 DriverSoftware provided by SUN MicroSystems as the part of JDBC Driver class is  sun.jdbc.odbc.JdbcOdbcDriver
+
+DRIVER INTERFACE:-
+==================
+
+It is the requirement specification present in java.sql package to develop Driver Class .
+
+DRIVER CLASS:-
+==================
+
+It is the implementation class for Driver Interface present in Driver Software
+
+DRIVER SOFTWARE:-
+==================
+
+It is the set of implementation class for interface present in JDBC API and package java.sql package and javax.sql package
+
+
+
+
+
+
+
+
